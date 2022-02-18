@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "hababi",
-  "version": "${version}",
+  "version": "0.1.0-alpha",
 
   "name": "Hababi Mod",
   "description": "The ultimate mod, made and designed by Hababi",
