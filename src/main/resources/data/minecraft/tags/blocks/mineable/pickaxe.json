@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "hababi:hababite_block"
+    "hababi:hababite_block",
+    "hababi:hababite_ore"
   ]
 }

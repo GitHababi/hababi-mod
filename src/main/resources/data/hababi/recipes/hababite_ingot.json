@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "item": "hababi:hababite_block"
+      }
+    ],
+    "result": {
+      "item": "hababi:hababite_ingot",
+      "count": 9
+    }
+  }

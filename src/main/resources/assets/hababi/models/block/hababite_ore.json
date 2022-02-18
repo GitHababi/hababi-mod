@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+      "all": "hababi:block/hababite_ore"
+    }
+  }

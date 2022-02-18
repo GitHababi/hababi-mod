@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " H ",
+      " S ",
+      " S "
+    ],
+    "key": {
+      "H": {
+        "item": "hababi:hababite_ingot"
+      },
+      "S": {
+        "item": "minecraft:stick"
+      }
+    },
+    "result": {
+      "item": "hababi:hababite_shovel",
+      "count": 1
+    }
+  }

@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "HHH",
+      "HHH",
+      "HHH"
+    ],
+    "key": {
+      "H": {
+        "item": "hababi:hababite_ingot"
+      }
+    },
+    "result": {
+      "item": "hababi:hababite_block",
+      "count": 1
+    }
+  }

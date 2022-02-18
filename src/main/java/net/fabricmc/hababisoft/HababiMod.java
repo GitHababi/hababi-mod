@@ -23,10 +23,10 @@ public class HababiMod implements ModInitializer {
 	public static final Item HABABITE_PICKAXE = new CustomPickaxeItem(HababiteToolMaterial.INSTANCE, 5, -2.8f);
 	public static final Item HABABITE_AXE = new CustomAxeItem(HababiteToolMaterial.INSTANCE, 9, -3.0f);
 	public static final Item HABABITE_SHOVEL = new ShovelItem(HababiteToolMaterial.INSTANCE, 5, -3.0f, new FabricItemSettings().group(ItemGroup.TOOLS));
-	public static final Item HABABITE_HOE = new CustomHoeItem(HababiteToolMaterial.INSTANCE, 0, -0.3f);
+	public static final Item HABABITE_HOE = new CustomHoeItem(HababiteToolMaterial.INSTANCE, 0, -0.1f);
 
 	public static final Block HABABITE_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).hardness(5f).resistance(6f).requiresTool());
-
+	public static final Block HABABITE_ORE = new Block(FabricBlockSettings.of(Material.STONE).hardness(3f).resistance(3f).requiresTool());
 	@Override
 	public void onInitialize() {
 		registerItem("hababite_ingot", HABABITE_INGOT);
@@ -36,6 +36,7 @@ public class HababiMod implements ModInitializer {
 		registerItem("hababite_shovel", HABABITE_SHOVEL);
 		registerItem("hababite_hoe", HABABITE_HOE);
 
+		registerBlock("hababite_ore", HABABITE_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
 		registerBlock("hababite_block", HABABITE_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
 		LOGGER.info("Hello Fabric world!");
 	}
