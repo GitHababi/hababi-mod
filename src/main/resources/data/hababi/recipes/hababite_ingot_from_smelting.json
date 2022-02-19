@@ -1,7 +1,7 @@
 {
     "type" : "smelting",
     "ingredient" : {
-        "item" : "hababi:hababite_ore"
+        "item" : "hababi:raw_hababite"
     },
     "result" : "hababi:hababite_ingot",
     "experience" : 0.7,

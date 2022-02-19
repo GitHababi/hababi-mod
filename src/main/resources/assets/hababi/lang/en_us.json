@@ -5,7 +5,12 @@
     "item.hababi.hababite_shovel" : "Hababite Shovel",
     "item.hababi.hababite_hoe" : "Hababite Hoe",
     "item.hababi.hababite_ingot" : "Hababite Ingot",
-    
+    "item.hababi.hababite_helmet" : "Hababite Helmet",
+    "item.hababi.hababite_chestplate" : "Hababite Chestplate",
+    "item.hababi.hababite_leggings" : "Hababite Leggings",
+    "item.hababi.hababite_boots" : "Hababite Boots",
+    "item.hababi.raw_hababite" : "Raw Hababite",
+
     "block.hababi.hababite_block" : "Block of Hababite",
     "block.hababi.hababite_ore" : "Hababite Ore"
 }

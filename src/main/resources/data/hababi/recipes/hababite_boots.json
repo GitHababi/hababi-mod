@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " H ",
+      "HDH",
+      " H "
+    ],
+    "key": {
+      "H": {
+        "item": "hababi:hababite_ingot"
+      },
+      "D": {
+        "item": "minecraft:diamond_boots"
+      }
+    },
+    "result": {
+      "item": "hababi:hababite_boots",
+      "count": 1
+    }
+  }
