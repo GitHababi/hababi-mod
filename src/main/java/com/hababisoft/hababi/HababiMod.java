@@ -1,23 +1,24 @@
-package net.fabricmc.hababisoft;
+package com.hababisoft.hababi;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.hababisoft.materials.HababiteArmorMaterial;
-import net.fabricmc.hababisoft.materials.HababiteToolMaterial;
+
+import com.hababisoft.hababi.items.*;
+import com.hababisoft.hababi.materials.HababiteArmorMaterial;
+import com.hababisoft.hababi.materials.HababiteToolMaterial;
+
 import net.minecraft.item.*;
 import net.minecraft.block.*;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.util.*;
 import net.minecraft.util.registry.*;
 import net.minecraft.world.gen.*;
-import net.minecraft.world.gen.decorator.*;
 import net.minecraft.world.gen.feature.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import net.fabricmc.hababisoft.items.*;
 
 public class HababiMod implements ModInitializer {
 
@@ -46,17 +47,16 @@ public class HababiMod implements ModInitializer {
 
 	/* Ore gen fields (I have no idea how it works, leave that to people smarter than me) */
 
-	private static final ConfiguredFeature<?, ?> OVERWORLD_HABABITE_ORE_CONFIGURED_FEATURE = Feature.ORE.configure(new OreFeatureConfig(OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
-	HABABITE_ORE.getDefaultState(),5));
-	public static final PlacedFeature OVERWORLD_HABABITE_ORE_PLACED_FEATURE = OVERWORLD_HABABITE_ORE_CONFIGURED_FEATURE.withPlacement(CountPlacementModifier.of(4),SquarePlacementModifier.of(),HeightRangePlacementModifier.trapezoid(YOffset.getBottom(), YOffset.fixed(64)));
+	//private static final ConfiguredFeature<?, ?> OVERWORLD_HABABITE_ORE_CONFIGURED_FEATURE = Feature.ORE.configure(new OreFeatureConfig(OreConfiguredFeatures.STONE_ORE_REPLACEABLES, HABABITE_ORE.getDefaultState(),5));
+	//public static final PlacedFeature OVERWORLD_HABABITE_ORE_PLACED_FEATURE = OVERWORLD_HABABITE_ORE_CONFIGURED_FEATURE.withPlacement(CountPlacementModifier.of(4),SquarePlacementModifier.of(),HeightRangePlacementModifier.trapezoid(YOffset.getBottom(), YOffset.fixed(64)));
 
 	@Override
 	public void onInitialize() {
 		/* Register world gen */
 
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(NAMESPACE, "overworld_hababite_ore"), OVERWORLD_HABABITE_ORE_CONFIGURED_FEATURE);
-		Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(NAMESPACE, "overworld_hababite_ore"), OVERWORLD_HABABITE_ORE_PLACED_FEATURE);
-		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, RegistryKey.of(Registry.PLACED_FEATURE_KEY,new Identifier(NAMESPACE, "overworld_hababite_ore")));
+		//Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(NAMESPACE, "overworld_hababite_ore"), OVERWORLD_HABABITE_ORE_CONFIGURED_FEATURE);
+		//Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(NAMESPACE, "overworld_hababite_ore"), OVERWORLD_HABABITE_ORE_PLACED_FEATURE);
+		//BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, RegistryKey.of(Registry.PLACED_FEATURE_KEY,new Identifier(NAMESPACE, "overworld_hababite_ore")));
 
 		/* Register Blocks and Items */
 		

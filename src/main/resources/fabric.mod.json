@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.hababisoft.HababiMod"
+      "com.hababisoft.hababi.HababiMod"
     ]
   },
   "mixins": [

@@ -1,6 +1,7 @@
-package net.fabricmc.hababisoft.materials;
+package com.hababisoft.hababi.materials;
 
-import net.fabricmc.hababisoft.HababiMod;
+import com.hababisoft.hababi.HababiMod;
+
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 

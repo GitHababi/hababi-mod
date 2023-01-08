@@ -1,4 +1,4 @@
-package net.fabricmc.hababisoft.blocks;
+package com.hababisoft.hababi.blocks;
 
 import net.minecraft.block.Block;
 
