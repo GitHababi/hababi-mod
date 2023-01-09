@@ -4,18 +4,27 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 
+import com.hababisoft.hababi.entity.CubeEntity;
 import com.hababisoft.hababi.items.*;
 import com.hababisoft.hababi.materials.HababiteArmorMaterial;
 import com.hababisoft.hababi.materials.HababiteToolMaterial;
 
 import net.minecraft.item.*;
 import net.minecraft.block.*;
+import net.minecraft.entity.EntityDimensions;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.*;
 import net.minecraft.util.registry.*;
 import net.minecraft.world.gen.*;
 import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.placementmodifier.*;
+
+import java.util.Arrays;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,19 +53,31 @@ public class HababiMod implements ModInitializer {
 	public static final Item HABABITE_LEGGINGS = new ArmorItem(HababiteArmorMaterial.INSTANCE, EquipmentSlot.LEGS, new FabricItemSettings().group(ItemGroup.COMBAT));
 	public static final Item HABABITE_BOOTS = new ArmorItem(HababiteArmorMaterial.INSTANCE, EquipmentSlot.FEET, new FabricItemSettings().group(ItemGroup.COMBAT));
 
+	/* Entity fields */
+	
+	public static final EntityType<CubeEntity> CUBE = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier(NAMESPACE, "cube"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CubeEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
+    );
+	
+	/* Ore gen fields */
 
-	/* Ore gen fields (I have no idea how it works, leave that to people smarter than me) */
-
-	//private static final ConfiguredFeature<?, ?> OVERWORLD_HABABITE_ORE_CONFIGURED_FEATURE = Feature.ORE.configure(new OreFeatureConfig(OreConfiguredFeatures.STONE_ORE_REPLACEABLES, HABABITE_ORE.getDefaultState(),5));
-	//public static final PlacedFeature OVERWORLD_HABABITE_ORE_PLACED_FEATURE = OVERWORLD_HABABITE_ORE_CONFIGURED_FEATURE.withPlacement(CountPlacementModifier.of(4),SquarePlacementModifier.of(),HeightRangePlacementModifier.trapezoid(YOffset.getBottom(), YOffset.fixed(64)));
+	private static final ConfiguredFeature<?, ?> OVERWORLD_HABABITE_ORE_CONFIGURED_FEATURE = new ConfiguredFeature(Feature.ORE,new OreFeatureConfig(OreConfiguredFeatures.STONE_ORE_REPLACEABLES, HABABITE_ORE.getDefaultState(),5));
+	public static final PlacedFeature OVERWORLD_HABABITE_ORE_PLACED_FEATURE = new PlacedFeature(RegistryEntry.of(OVERWORLD_HABABITE_ORE_CONFIGURED_FEATURE),
+			Arrays.asList(CountPlacementModifier.of(4),SquarePlacementModifier.of(),HeightRangePlacementModifier.trapezoid(YOffset.getBottom(), YOffset.fixed(64))));
 
 	@Override
 	public void onInitialize() {
+		/* Register entities */
+		
+		FabricDefaultAttributeRegistry.register(CUBE, CubeEntity.createMobAttributes());
+		
 		/* Register world gen */
 
-		//Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(NAMESPACE, "overworld_hababite_ore"), OVERWORLD_HABABITE_ORE_CONFIGURED_FEATURE);
-		//Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(NAMESPACE, "overworld_hababite_ore"), OVERWORLD_HABABITE_ORE_PLACED_FEATURE);
-		//BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, RegistryKey.of(Registry.PLACED_FEATURE_KEY,new Identifier(NAMESPACE, "overworld_hababite_ore")));
+		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(NAMESPACE, "overworld_hababite_ore"), OVERWORLD_HABABITE_ORE_CONFIGURED_FEATURE);
+		Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(NAMESPACE, "overworld_hababite_ore"), OVERWORLD_HABABITE_ORE_PLACED_FEATURE);
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, RegistryKey.of(Registry.PLACED_FEATURE_KEY,new Identifier(NAMESPACE, "overworld_hababite_ore")));
 
 		/* Register Blocks and Items */
 		

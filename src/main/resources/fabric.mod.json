@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "com.hababisoft.hababi.HababiMod"
+    ],
+    "client": [
+      "com.hababisoft.hababi.HababiModClient"
     ]
   },
   "mixins": [

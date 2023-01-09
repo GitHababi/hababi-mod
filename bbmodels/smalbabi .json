@@ -1,0 +1,65 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "smalbabi"
+	},
+	"elements": [
+		{
+			"name": "Body",
+			"from": [6, 0, 4],
+			"to": [10, 12, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 6, 8]},
+			"faces": {
+				"north": {"uv": [2, 6, 3, 9], "texture": "#0"},
+				"east": {"uv": [0, 6, 2, 9], "texture": "#0"},
+				"south": {"uv": [5, 6, 6, 9], "texture": "#0"},
+				"west": {"uv": [3, 6, 5, 9], "texture": "#0"},
+				"up": {"uv": [3, 6, 2, 4], "texture": "#0"},
+				"down": {"uv": [4, 4, 3, 6], "texture": "#0"}
+			}
+		},
+		{
+			"name": "Head",
+			"from": [4, 12, 4],
+			"to": [12, 20, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 16, 8]},
+			"faces": {
+				"north": {"uv": [2, 2, 4, 4], "texture": "#0"},
+				"east": {"uv": [0, 2, 2, 4], "texture": "#0"},
+				"south": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"west": {"uv": [4, 2, 6, 4], "texture": "#0"},
+				"up": {"uv": [4, 2, 2, 0], "texture": "#0"},
+				"down": {"uv": [6, 0, 4, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "Left_Arm",
+			"from": [6, 2, 0],
+			"to": [10, 12, 4],
+			"rotation": {"angle": 0, "axis": "x", "origin": [8, 12, 4]},
+			"faces": {
+				"north": {"uv": [9, 1, 10, 3.5], "texture": "#0"},
+				"east": {"uv": [8, 1, 9, 3.5], "texture": "#0"},
+				"south": {"uv": [11, 1, 12, 3.5], "texture": "#0"},
+				"west": {"uv": [10, 1, 11, 3.5], "texture": "#0"},
+				"up": {"uv": [10, 1, 9, 0], "texture": "#0"},
+				"down": {"uv": [11, 0, 10, 1], "texture": "#0"}
+			}
+		},
+		{
+			"name": "Right_Arm",
+			"from": [6, 2, 12],
+			"to": [10, 12, 16],
+			"rotation": {"angle": 0, "axis": "x", "origin": [8, 12, 12]},
+			"faces": {
+				"north": {"uv": [7, 7, 8, 9.5], "texture": "#0"},
+				"east": {"uv": [6, 7, 7, 9.5], "texture": "#0"},
+				"south": {"uv": [9, 7, 10, 9.5], "texture": "#0"},
+				"west": {"uv": [8, 7, 9, 9.5], "texture": "#0"},
+				"up": {"uv": [8, 7, 7, 6], "texture": "#0"},
+				"down": {"uv": [9, 6, 8, 7], "texture": "#0"}
+			}
+		}
+	]
+}
